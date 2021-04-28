@@ -12,14 +12,11 @@
 
 #include "ft_printf.h"
 
-int		callfunc(t_flags s_fl, int sign, char *str, int num)
+int	callfunc(t_flags s_fl, int sign, char *str, int num)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
-
-	// if (num < 0 && sign == 0 && s_fl.control == 1 && s_fl.dot == -1)
-	// 	sign = 2;
 	if (num < 0 && sign == 0 && s_fl.zero == 0)
 	{
 		sign = 2;
@@ -35,12 +32,11 @@ int		callfunc(t_flags s_fl, int sign, char *str, int num)
 	return (counter);
 }
 
-int		intwidth(t_flags s_fl, int sign, int num, char *str)
+int	intwidth(t_flags s_fl, int sign, int num, char *str)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
-
 	if (s_fl.dot >= 0 && (s_fl.width > s_fl.dot))
 		counter += print_width(s_fl.width, 0, s_fl.dot);
 	else if (s_fl.dot >= 0 && (s_fl.dot > ft_strlen(str)))
@@ -54,9 +50,9 @@ int		intwidth(t_flags s_fl, int sign, int num, char *str)
 	return (counter);
 }
 
-int		print_int(int num, int *sign, char *str, t_flags s_fl)
+int	print_int(int num, int *sign, char *str, t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (num < 0 && *sign == 2)
@@ -74,7 +70,7 @@ int		print_int(int num, int *sign, char *str, t_flags s_fl)
 
 int	zero(t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.width == 0 && s_fl.dot <= -1)
@@ -86,7 +82,7 @@ int	zero(t_flags s_fl)
 	return (counter);
 }
 
-int		conv_int(int num, t_flags s_fl)
+int	conv_int(int num, t_flags s_fl)
 {
 	int		counter;
 	char	*str;

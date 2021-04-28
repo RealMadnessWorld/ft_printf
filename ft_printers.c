@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int		ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -35,9 +35,9 @@ int	putstr_w_prec(char *s, int dot)
 	return (counter);
 }
 
-int		print_width(int width, int zero, int size)
+int	print_width(int width, int zero, int size)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	while (width - size > 0)

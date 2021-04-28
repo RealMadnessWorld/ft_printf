@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int		conv_char(char c, t_flags s_fl)
+int	conv_char(char c, t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.width > 1 && s_fl.zero == 1)
@@ -31,9 +31,9 @@ int		conv_char(char c, t_flags s_fl)
 	return (counter);
 }
 
-int		strdot(char *str, int dot)
+int	strdot(char *str, int dot)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (dot >= 0)
@@ -43,9 +43,9 @@ int		strdot(char *str, int dot)
 	return (counter);
 }
 
-int		conv_str(char *str, t_flags s_fl)
+int	conv_str(char *str, t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (!str)

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jarsenio <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/28 18:26:25 by jarsenio          #+#    #+#             */
+/*   Updated: 2021/04/28 18:26:29 by jarsenio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		intlen(long int n, int base)
+int	intlen(long int n, int base)
 {
 	int	len;
 
@@ -18,9 +29,9 @@ int		intlen(long int n, int base)
 	return (len);
 }
 
-int		unintlen(unsigned long long n, int base)
+int	unintlen(unsigned long long n, int base)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n == 0)

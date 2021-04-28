@@ -42,7 +42,7 @@ char	*ft_strdup(const char *string)
 
 char	*ft_tolower(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -56,15 +56,15 @@ char	*ft_tolower(char *str)
 
 int	zero_neg(t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
-	if (s_fl.dot < s_fl.width && s_fl.zero == 0 && s_fl.dot >= 0 && s_fl.minus == 1)
+	if (s_fl.dot < s_fl.width && s_fl.zero == 0 && s_fl.dot >= 0)
 	{		
 		counter += print_width(s_fl.dot, 1, 0);
 		counter += print_width(s_fl.width, 0, s_fl.dot);
 	}
-	else if (s_fl.width >= 0 && s_fl.dot <= -1 && s_fl.zero == 0 && s_fl.minus == 1)
+	else if (s_fl.width >= 0 && s_fl.dot <= -1 && s_fl.zero == 0)
 	{
 		counter += print_width(1, 1, 0);
 		counter += print_width(s_fl.width, 0, 1);
@@ -84,7 +84,7 @@ int	zero_neg(t_flags s_fl)
 
 int	zero_posi(t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.dot < s_fl.width && s_fl.zero == 0 && s_fl.dot >= 0)

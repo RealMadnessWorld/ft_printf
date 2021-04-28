@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int		insta_fix(t_flags *s_fl, char *str)
+int	insta_fix(t_flags *s_fl, char *str)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl->dot <= -1)
@@ -24,13 +24,13 @@ int		insta_fix(t_flags *s_fl, char *str)
 	return (counter);
 }
 
-int		unsig_conv(unsigned num, t_flags s_fl)
+int	unsig_conv(unsigned num, t_flags s_fl)
 {
-	int counter;
-	char *str;
+	int		counter;
+	char	*str;
 
 	counter = 0;
-	if(s_fl.dot == 0 && num == 0)
+	if (s_fl.dot == 0 && num == 0)
 	{
 		counter += print_width(s_fl.width, 0, 0);
 		return (counter);
@@ -41,14 +41,14 @@ int		unsig_conv(unsigned num, t_flags s_fl)
 	return (counter);
 }
 
-int		print_unsigned(char *str, t_flags s_fl)
+int	print_unsigned(char *str, t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.dot >= 0 && (s_fl.dot < ft_strlen(str)))
 		s_fl.dot = ft_strlen(str);
-	if (s_fl.minus == 1)		
+	if (s_fl.minus == 1)
 	{
 		counter += insta_fix(&s_fl, str);
 		counter += putstr_w_prec(str, s_fl.dot);

@@ -12,25 +12,26 @@
 
 #include "ft_printf.h"
 
-int		ck_flags(char c)
+int	ck_flags(char c)
 {
-	if (c == '-' || c == '0' || c == '.' || c == '*' || c == '#' || c == ' ' || c == '+')
+	if (c == '-' || c == '0' || c == '.' || c == '*'
+		|| c == '#' || c == ' ' || c == '+')
 		return (1);
 	else
 		return (0);
 }
 
-int		ck_char(char c)
+int	ck_char(char c)
 {
-	if (c == 'c' || c == 's' || c == 'p' || c == 'd' ||
-		c == 'i' || c == 'u' || c == 'x' || c == 'X' ||
-		c == '%' || c == 'n' || c == 'l')
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd'
+		||c == 'i' || c == 'u' || c == 'x' || c == 'X'
+		||c == '%' || c == 'n' || c == 'l')
 		return (1);
 	else
 		return (0);
 }
 
-int		ck_num(char c)
+int	ck_num(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

@@ -18,8 +18,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-
-typedef struct 	s_fl
+typedef struct s_fl
 {
 	int		width;
 	int		control;
@@ -31,66 +30,44 @@ typedef struct 	s_fl
 }				t_flags;
 
 int		ft_printf(const char *str, ...);
-
-//inicializa as flags
 t_flags	flags_init(void);
-void 	set_letter(char c, t_flags *s_fl);
-
-//flags
+void	set_letter(char c, t_flags *s_fl);
 void	set_width(const char c, t_flags *s_fl);
 void	set_star(t_flags *s_fl, va_list args);
 int		set_prec(const char *str, int i, va_list args, t_flags *s_fl);
-
-//				***outputs***
-//					*char*
 int		conv_char(char c, t_flags s_fl);
-//					*str*
 int		conv_str(char *str, t_flags s_fl);
 int		strdot(char *str, int dot);
-//					*int*
 int		callfunc(t_flags s_fl, int sign, char *str, int num);
 int		intwidth(t_flags s_fl, int sign, int num, char *str);
 int		print_int(int num, int *sign, char *str, t_flags s_fl);
 int		conv_int(int num, t_flags s_fl);
 int		zero_posi(t_flags s_fl);
 int		zero_neg(t_flags s_fl);
-//					*unsig*
 int		unsig_conv(unsigned num, t_flags s_fl);
 int		print_unsigned(char *str, t_flags s_fl);
 int		insta_fix(t_flags *s_fl, char *str);
-//					*pointer*
 int		pointer_conv(unsigned long long ptr, t_flags s_fl);
 int		ptr_width(char *str, t_flags s_fl);
 int		empty_ptr(t_flags s_fl);
 int		empty_ptr_neg(t_flags s_fl);
 int		ptr_width_neg(char *str, t_flags s_fl);
-//					*hexa*
 int		hexa_conv(unsigned int num, int caps, t_flags s_fl);
-int     hexa_print(t_flags s_fl, char *str);
-
-/*    Verification of how the '%' will affect the string   */
+int		hexa_print(t_flags s_fl, char *str);
 int		verify(const char *str, int i, va_list args, t_flags *s_fl);
 int		mix_n_match_output(t_flags s_fl, va_list args);
 int		mix_n_match_flags(const char *str, int i, va_list args, t_flags *s_fl);
 int		init(const char *str, va_list args);
-
-//check for chars, nums and flags
 int		ck_char(char c);
 int		ck_num(char c);
 int		ck_flags(char c);
-
-/*Print functions*/
 int		ft_putchar(char c);
 void	ft_putstr(char *s);
 int		print_width(int width, int zero, int size);
 int		putstr_w_prec(char *s, int dot);
-
-/*Utils from libft*/
 int		ft_strlen(const char *str);
 char	*ft_strdup(const char *string);
 char	*ft_tolower(char *str);
-
-//	Itoa
 char	*ft_itoa(long int n);
 int		intlen(long int n, int base);
 char	*unsigneditoa(unsigned long long n, int base);

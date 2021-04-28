@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int		empty_ptr_neg(t_flags s_fl)
+int	empty_ptr_neg(t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.dot == 0)
@@ -30,9 +30,9 @@ int		empty_ptr_neg(t_flags s_fl)
 	return (counter);
 }
 
-int		empty_ptr(t_flags s_fl)
+int	empty_ptr(t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.minus == 1)
@@ -53,9 +53,9 @@ int		empty_ptr(t_flags s_fl)
 	return (counter);
 }
 
-int		ptr_width(char *str, t_flags s_fl)
+int	ptr_width(char *str, t_flags s_fl)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.dot >= 0)
@@ -72,10 +72,10 @@ int		ptr_width(char *str, t_flags s_fl)
 	return (counter);
 }
 
-int		pointer_conv(unsigned long long ptr, t_flags s_fl)
+int	pointer_conv(unsigned long long ptr, t_flags s_fl)
 {
-	int counter;
-	char *str;
+	int		counter;
+	char	*str;
 
 	counter = 0;
 	if (ptr == 0 && (s_fl.dot == 0 || s_fl.dot == -1))

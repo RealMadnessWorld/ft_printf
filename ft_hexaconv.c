@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int     hexa_print(t_flags s_fl, char *str)
+int	hexa_print(t_flags s_fl, char *str)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (s_fl.dot >= 0 && (s_fl.dot < ft_strlen(str)))
@@ -32,10 +32,10 @@ int     hexa_print(t_flags s_fl, char *str)
 	return (counter);
 }
 
-int     hexa_conv(unsigned int num, int caps, t_flags s_fl)
+int	hexa_conv(unsigned int num, int caps, t_flags s_fl)
 {
-	int counter;
-	char *str;
+	int		counter;
+	char	*str;
 
 	counter = 0;
 	if (num == 0 && s_fl.dot == 0)
